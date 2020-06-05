@@ -1,0 +1,26 @@
+.body {
+ color: #000;
+ background: #fff;
+ font-size: 10px;
+ text-align: -webkit-center;
+ margin-top: 20%;
+}
+.content {
+ background: #ccc;
+ font-size: 1.1em;
+ text-align: -webkit-center;
+ margin-top: 20%;
+}
+.sidebar {
+ color: #fff;
+ background: #000;
+ font-size: 1.0em;
+ text-align: -webkit-center;
+ margin-top: 20%;
+}
+.footer {
+ color: #555;
+ background: #ccc;
+ text-align: -webkit-center;
+ margin-top: 20%;
+}
