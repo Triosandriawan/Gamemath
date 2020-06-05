@@ -3,9 +3,8 @@
 session_start();
 
 //koneksi database 
-$link = mysqli_connect('localhost', '', '', '');
+$link = mysqli_connect('localhost', 'id13958587_daniel', 'Erick_11022000', 'id13958587_gamemath');
     
-// $link = mysqli_connect('localhost', 'root', '', 'gamemath');
 //menguji error koneksi database
 if (!$link){
     die('ada error ' . mysqli_connect_error());
@@ -46,8 +45,8 @@ if ( isset( $_POST['submit']))
         //session nilai default jawab benar dan salah
         $_SESSION['live'] = 5;
         $_SESSION['skor'] = 0;
-        //redirect ke playold.php
-        header('Location:playold.php');
+        //redirect ke old_player.php
+        header('Location:old_player.php');
         die();
     } else{
         //query daftar input data baru user ke database
@@ -69,12 +68,14 @@ mysqli_close($link);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game52</title>
+    <title>Gamemath</title>
 </head>
-<body>
+<body class="content">
     <!-- form Login Game -->
+    <h1> Gamemath </h1>
 <form action="index.php" method="post">
 <table >
     <tr>
