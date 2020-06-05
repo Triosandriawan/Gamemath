@@ -3,9 +3,8 @@
 session_start();
 
 //koneksi database 
-$link = mysqli_connect('localhost', 'root', '', 'gamemath');
+$link = mysqli_connect('localhost', 'id13958587_daniel', 'Erick_11022000', 'id13958587_gamemath');
     
-//$link = mysqli_connect('localhost', 'root', '', 'gamemath');
 //menguji error koneksi database
 if (!$link){
     die('ada error ' . mysqli_connect_error());
@@ -20,7 +19,7 @@ $query = "UPDATE player SET skor=$skor WHERE nama='$name'";
 $hasil = mysqli_query($link, $query);
 
 //Output Akhir Game
-echo "Hello, ". $name."...Sayang permainan sudah selesai. Semoga lain kali bisa lebih baik.<br>Skor Anda : ". $skor . "<br>";
+echo "Hello ". $name.", Permainan sudah selesai. Terus coba dan jadi lebih baik.<br>Skor Anda : ". $skor . "<br>";
 //HOF
 echo "<h1> Hall of Fame </h1>";
 //query untuk menampilkan tabel secara descending dengan limit 10
@@ -60,12 +59,13 @@ session_destroy();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GameOver</title>
 </head>
-<body>
-	<!-- Form Main Lagi -->
+<body class="content">
+	<!-- Form untuk Main Lagi -->
 	<form action='index.php' method='post'>
 		<input type='submit' name='mainlagi' value='Main Lagi'>
 	</form>
