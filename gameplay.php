@@ -13,13 +13,13 @@ if(isset($_POST['submit']))
     //membuat variabel dari pengambilan post form
     $jawab = $_POST['jawaban'];
     $hasil = $_SESSION['hasil'];
-    $x_soal = $_SESSION['xsoal'];
-    $y_soal = $_SESSION['ysoal'];
+    $bil_1 = $_SESSION['bil1'];
+    $bil_2 = $_SESSION['bil2'];
     if( $jawab == $hasil){
         //session bila jawaban benar skor di tambah 10
         $_SESSION['skor'] += 10;
         echo "<p>";
-        echo "Hello " . $_SESSION['nama_user'] . " Selamat jawaban Anda benar...<br> $x_soal + $y_soal = $hasil <br>";
+        echo "Hello " . $_SESSION['nama_user'] . " Selamat jawaban Anda benar...<br> $bil_1 + $bil_2 = $hasil <br>";
         echo "Lives: <". $_SESSION['live'] . "> | Score: <" . $_SESSION['skor'] . ">";
         echo "</p>";
         echo "<p>";
@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
         $_SESSION['skor'] -= 2;
         $_SESSION['live'] -= 1;
         echo "<p>";
-        echo "Hello " . $_SESSION['nama_user'] . " ,jawaban Anda salah... tetap Semangat !!! <br> $x_soal + $y_soal = $hasil <br>";
+        echo "Hello " . $_SESSION['nama_user'] . "  ,jawaban Anda salah <br> $bil_1 + $bil_2 = $hasil <br>";
         echo "Lives: <". $_SESSION['live'] . "> | Score: <" . $_SESSION['skor'] . ">";
         echo "</p>";
         echo "<p>";
@@ -50,19 +50,20 @@ if(isset($_POST['submit']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamePlay</title>
 </head>
-<body>
+<body class="content">
     <!-- FORM input jawaban -->
     <form action="gameplay.php" method="post">
     <!-- Output Soal -->
     <p> Berapakah 
     <?php 
-    //membuat variabel x soal,y soal dari x,y sebelumnya menjadi session sehingga data tersimpan dan bisa di proses
-    $_SESSION['xsoal'] = $x;
-    $_SESSION['ysoal'] = $y; 
+    //membuat variabel soal dari x,y sebelumnya menjadi session sehingga data tersimpan dan bisa di proses
+    $_SESSION['bil1'] = $x;
+    $_SESSION['bil2'] = $y; 
     $_SESSION['hasil'] = $x + $y;
     echo "$x + $y "
     ?> = <input type="text" name="jawaban">
